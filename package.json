@@ -1,0 +1,13 @@
+{
+  "name": "casparclient",
+  "version": "0.9.0",
+  "main": "interface/index.html",
+  "window": { 
+    "width": 390, 
+    "height": 600,
+    "min_width": 315,
+    "min_height": 380,
+    "toolbar": true,
+    "title": "Casparclient"
+  }
+}

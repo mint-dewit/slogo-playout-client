@@ -1,0 +1,98 @@
+'use strict';
+
+/* requires */
+
+var http = require('http');
+var net = require('net');
+var streamer = require('../streamer.js');
+var fs = require('fs');
+var osc = require('osc-min');
+var udp = require('dgram');
+
+
+
+
+/* global variables */
+var casparcg = new net.Socket();
+
+var info_loaded = false;
+var connected = false;
+var initiated = false;
+
+var videos;
+var nextvideo;
+var next_videos;
+var infochannel;
+var new_infochannel;
+
+var playlists;
+var cur_stream = 0;
+
+var programme_live = false;
+var next_programme = 0;
+var cur_infochannel = 0;
+var next_infochannel = new Date();
+
+var audio_playing = true;
+
+var config;
+var connecting = false;
+
+var silence_vars = [ { 'silent': false, 'silent_since': new Date(), 'warned': false }, { 'silent': false, 'silent_since': new Date(), 'warned': false } ];
+
+var loaded = { 'config': false, 'videos' : false, 'info_channel' : false, 'playlists' : false };
+
+
+
+
+
+
+
+var sock = udp.createSocket("udp4", function(msg, rinfo) {
+  var bundle = osc.fromBuffer(msg);
+
+  for (var i in bundle.elements) {
+  	var cur_date = new Date();
+
+  	for (var chan in silence_vars) {
+  		var act_chan = Number(chan) + 1;
+  		if (bundle.elements[i].address == '/channel/1/mixer/audio/'+act_chan+'/dBFS') {
+	  		if (bundle.elements[i].args[0].value < -192) {
+	  			if (silence_vars[chan].silent == true) {
+	  				if (cur_date - 10000 > silence_vars[chan].silent_since && silence_vars[chan].warned == false) {
+	  					console.log('WARNING: SILENT FOR 10 SECS ON CHANNEL ' + act_chan);
+	  					$.get('http://igoadmin.nl/teksttv/silence/'+act_chan+'/stopped/518A1C4E1CBB13FADD56C3ADC1916');
+	  					silence_vars[chan].warned = true;
+	  					to_caspar('PLAY 1-10 udp://@127.0.0.1:1234');
+	  				}
+	  			} else {
+	  				silence_vars[chan].silent = true;
+	  				silence_vars[chan].silent_since = new Date();
+	  			}
+	  		} else {
+	  			if (silence_vars[chan].silent == true) {
+	  				silence_vars[chan].silent = false;
+	  				if (silence_vars[chan].warned == true) {
+	  					silence_vars[chan].warned = false;
+	  					console.log('AUDIO ON CHANNEL '+act_chan+' RESUMED AFTER ' + ((cur_date - silence_vars[chan].silent_since)/1000) )
+	  					$.get('http://igoadmin.nl/teksttv/silence/'+act_chan+'/started/518A1C4E1CBB13FADD56C3ADC1916');
+	  				}
+	  			}
+	  		} 
+	  	} else if (bundle.elements[i].address == '/channel/1/output/consume_time') {
+	  		if (bundle.elements[i].args[0].value > 0.044) {
+	  			$.get('http://igoadmin.nl/teksttv/late_frame/'+(parseInt(bundle.elements[i].args[0].value*1000))+'/518A1C4E1CBB13FADD56C3ADC1916');
+	  		}
+	  	}
+  	}
+  }
+});
+
+sock.bind(6250);
+
+
+
+
+
+
+

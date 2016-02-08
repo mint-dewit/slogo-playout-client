@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">
+	<title>Playlist</title>
+	<trackList>
+		<track>
+			<location>file:///D:/Grote%20schijf/Music/BeFunk%20-%20Dawn%20%28flp%29.mp3</location>
+			<duration>286511</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>0</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///D:/Grote%20schijf/Music/Bel%20Heir%20-%20Kiss%20The%20Devil%20%28Just%20a%20Gent%20Remix%29.mp3</location>
+			<duration>284736</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>1</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///D:/Grote%20schijf/Music/Crywolf%20-%20Home%20We%20Made%20Pt.%20II%20%28Skrux%20Remix%29.mp3</location>
+			<duration>291501</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>2</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///D:/Grote%20schijf/Music/Jack%20Garratt%20-%20Worry.mp3</location>
+			<duration>218488</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>3</vlc:id>
+			</extension>
+		</track>
+	</trackList>
+	<extension application="http://www.videolan.org/vlc/playlist/0">
+			<vlc:item tid="0"/>
+			<vlc:item tid="1"/>
+			<vlc:item tid="2"/>
+			<vlc:item tid="3"/>
+	</extension>
+</playlist>

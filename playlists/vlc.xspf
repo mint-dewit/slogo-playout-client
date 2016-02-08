@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">
+	<title>Playlist</title>
+	<trackList>
+		
+		<track>
+			<location>file:///C:/Users/Balte/Music/BeFunk%20-%20Feelings.mp3</location>
+			<duration>127451</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>4</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/CATHEDRALS%20-%20Unbound.mp3</location>
+			<duration>201483</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>5</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/Hellberg%20-%20The%20Girl%20%28feat.%20Cozi%20Zuehlsdorff%29%20%28Mr%20FijiWiji%20Remix%29.mp3</location>
+			<duration>331519</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>6</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/Jaymes%20Young%20-%20I%27ll%20Be%20Good.mp3</location>
+			<duration>246440</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>7</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/Lenka%20-%20Everything%20At%20Once.mp3</location>
+			<title>Everything at Once</title>
+			<creator>Lenka</creator>
+			<album>Two</album>
+			<trackNum>5</trackNum>
+			<image>file:///C:/Users/Balte/AppData/Roaming/vlc/art/artistalbum/Lenka/Two/art</image>
+			<duration>156995</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>8</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/Major%20Lazer%20-%20Be%20Together%20%28feat.%20Wild%20Belle%29%20%28Vanic%20Remix%29.mp3</location>
+			<duration>261511</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>9</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/Mapps%20-%20Don%27t%20Hold%20On.mp3</location>
+			<duration>270158</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>10</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/Sherry%20W%20-%20Bouquet%20of%20Love%20%28Millic%20Remix%29.mp3</location>
+			<title>Sherry W - Bouquet of Love (Millic Remix)</title>
+			<creator>Sherry W</creator>
+			<annotation>0</annotation>
+			<image>file:///C:/Users/Balte/AppData/Roaming/vlc/art/arturl/90a2630888902112f821b2da2850fc18/art</image>
+			<duration>178364</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>11</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/The%20Glitch%20Mob%20-%20Fortune%20Days.mp3</location>
+			<title>Fortune Days</title>
+			<creator>The Glitch Mob</creator>
+			<album>Drink the Sea</album>
+			<trackNum>9</trackNum>
+			<image>file:///C:/Users/Balte/AppData/Roaming/vlc/art/artistalbum/The%20Glitch%20Mob/Drink%20the%20Sea/art</image>
+			<duration>382249</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>12</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/The%20Glitch%20Mob%20-%20Our%20Demons%20%28Feat.%20Aja%20Volkman%29%20%5BHD%5D.mp3</location>
+			<duration>315115</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>13</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/Vance%20Joy%20-%20Riptide%20%28FlicFlac%20Edit%29.mp3</location>
+			<duration>339358</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>14</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/%5BHQ%5D%20The%20Glitch%20Mob%20-%20Seven%20Nation%20Army%20Remix%20%28The%20White%20Stripes%29.mp3</location>
+			<duration>257177</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>15</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/%5BHouse%5D%20-%20Hellberg%20-%20This%20Is%20Forever%20%28feat.%20Danyka%20Nadeau%29%20%5BMonstercat%20Release%5D.mp3</location>
+			<duration>250488</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>16</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/Balte/Music/befunk%20-%20extreme_eye_of_the_storm_P1.mp3</location>
+			<duration>96676</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>17</vlc:id>
+			</extension>
+		</track>
+	</trackList>
+	<extension application="http://www.videolan.org/vlc/playlist/0">
+			<vlc:item tid="0"/>
+			<vlc:item tid="1"/>
+			<vlc:item tid="2"/>
+			<vlc:item tid="3"/>
+			<vlc:item tid="4"/>
+			<vlc:item tid="5"/>
+			<vlc:item tid="6"/>
+			<vlc:item tid="7"/>
+			<vlc:item tid="8"/>
+			<vlc:item tid="9"/>
+			<vlc:item tid="10"/>
+			<vlc:item tid="11"/>
+			<vlc:item tid="12"/>
+			<vlc:item tid="13"/>
+			<vlc:item tid="14"/>
+			<vlc:item tid="15"/>
+			<vlc:item tid="16"/>
+			<vlc:item tid="17"/>
+	</extension>
+</playlist>
