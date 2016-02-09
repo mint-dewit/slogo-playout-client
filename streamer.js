@@ -1,3 +1,26 @@
+/*
+* Copyright (c) 2011 Sveriges Television AB <info@casparcg.com>
+*
+* This file is part of RTV Slogo's playout system (www.rtvslogo.nl).
+*
+* RTV Slogo's playout system is free software: you can redistribute it 
+* and/or modify it under the terms of the GNU General Public License as 
+* published by the Free Software Foundation, either version 3 of the License, 
+* or (at your option) any later version.
+*
+* RTV Slogo's playout system is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with RTV Slogo's playout system. If not, see <http://www.gnu.org/licenses/>.
+*
+* Author: Balte de Wit, balte.dewit@gmail.com
+*/
+
+'use strict';
+
 var fs = require('fs');
 var xml2js = require('xml2js');
 var ffmpeg = require('fluent-ffmpeg');

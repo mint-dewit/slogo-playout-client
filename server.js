@@ -1,3 +1,24 @@
+/*
+* Copyright (c) 2011 Sveriges Television AB <info@casparcg.com>
+*
+* This file is part of RTV Slogo's playout system (www.rtvslogo.nl).
+*
+* RTV Slogo's playout system is free software: you can redistribute it 
+* and/or modify it under the terms of the GNU General Public License as 
+* published by the Free Software Foundation, either version 3 of the License, 
+* or (at your option) any later version.
+*
+* RTV Slogo's playout system is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with RTV Slogo's playout system. If not, see <http://www.gnu.org/licenses/>.
+*
+* Author: Balte de Wit, balte.dewit@gmail.com
+*/
+
 'use strict';
 
 /* requires */
@@ -393,7 +414,7 @@ var sock = udp.createSocket("udp4", function(msg, rinfo) {
 	  			if (silence_vars[chan].silent == true) {
 	  				if (cur_date - 10000 > silence_vars[chan].silent_since && silence_vars[chan].warned == false) {
 	  					console.log('WARNING: SILENT FOR 10 SECS ON CHANNEL ' + act_chan);
-	  					$.get('http://igoadmin.nl/teksttv/silence/'+act_chan+'/stopped/518A1C4E1CBB13FADD56C3ADC1916');
+	  					$.get(config.url+'/teksttv/silence/'+act_chan+'/stopped/'+config.secret);
 	  					silence_vars[chan].warned = true;
 	  					to_caspar('PLAY 1-10 udp://@127.0.0.1:1234');
 	  				}
@@ -407,13 +428,13 @@ var sock = udp.createSocket("udp4", function(msg, rinfo) {
 	  				if (silence_vars[chan].warned == true) {
 	  					silence_vars[chan].warned = false;
 	  					console.log('AUDIO ON CHANNEL '+act_chan+' RESUMED AFTER ' + ((cur_date - silence_vars[chan].silent_since)/1000) )
-	  					$.get('http://igoadmin.nl/teksttv/silence/'+act_chan+'/started/518A1C4E1CBB13FADD56C3ADC1916');
+	  					$.get(config.url+'/teksttv/silence/'+act_chan+'/started/'+config.secret);
 	  				}
 	  			}
 	  		} 
 	  	} else if (bundle.elements[i].address == '/channel/1/output/consume_time') {
 	  		if (bundle.elements[i].args[0].value > 0.044) {
-	  			$.get('http://igoadmin.nl/teksttv/late_frame/'+(parseInt(bundle.elements[i].args[0].value*1000))+'/518A1C4E1CBB13FADD56C3ADC1916');
+	  			$.get(config.url+'/teksttv/late_frame/'+(parseInt(bundle.elements[i].args[0].value*1000))+'/'+config.secret);
 	  		}
 	  	}
   	}
@@ -665,13 +686,13 @@ var main = setInterval(function(){ scheduled_videos() }, 10);
 
 setInterval(function(){ info_channel(); }, 10);
 
-//var stream_interval = setInterval(function(){ streams(); }, 100);
+var stream_interval = setInterval(function(){ streams(); }, 100);
 
-setInterval(function(){ upstream(); }, 60*1000);
+// setInterval(function(){ upstream(); }, 60*1000); turned off because casparcg no longer encodes internetstream in slogo's playout system
 
 var updater = setInterval(function(){ update_information() }, 60000);
 
-//var source_updater = setInterval(function(){ if (connected == true) casparcg.write('CLS\r\n') }, 2000);
+var source_updater = setInterval(function(){ if (connected == true) casparcg.write('CLS\r\n') }, 2000);
 
 
 

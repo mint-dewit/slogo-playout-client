@@ -2,6 +2,11 @@
   "name": "casparclient",
   "version": "0.9.0",
   "main": "interface/index.html",
+  "dependencies": {
+      "osc-min": "2.0.1",
+      "fluent-ffmpeg": "1.1.1",
+      "xml2js": "0.4.13"
+    },
   "window": { 
     "width": 390, 
     "height": 600,
